@@ -1,6 +1,6 @@
 name: Builder V1.1
 
-on: [push, star]
+on: [push]
 jobs:
     build-server:
         name: Build Mix-Space(server)
