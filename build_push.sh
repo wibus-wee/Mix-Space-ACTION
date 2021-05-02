@@ -22,6 +22,9 @@ echo "成功充补用户文件"
 # 开始构建
 sudo yarn
 sudo yarn build
+echo "删除node_modules"
+sudo rm -rf node_modules
+echo "打包源代码中"
 sudo tar cf kami.tar.gz *
 sudo mv kami.tar.gz .. #此时kami已经移动到根文件夹
 
@@ -47,6 +50,9 @@ echo "成功填入用户文件"
 # 开始构建
 sudo yarn
 sudo yarn build
+echo "删除node_modules"
+sudo rm -rf node_modules
+echo "打包源代码中"
 sudo tar cf server.tar.gz *
 sudo mv server.tar.gz .. #移动已编译文件
 # echo "|—————————————**** ls ****———————————————————————|"
@@ -74,6 +80,7 @@ echo "成功填入用户文件"
 sudo yarn
 sudo yarn build
 cd dist
+echo "打包源代码中"
 sudo tar cf admin.tar.gz *
 sudo mv admin.tar.gz .. # 移动编译dist
 cd .. # exit to admin dir

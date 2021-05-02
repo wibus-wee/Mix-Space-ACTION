@@ -2,10 +2,14 @@ import { faGithub, faQq, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { faCircle, faDotCircle } from '@fortawesome/free-regular-svg-icons'
 import {
   faBookOpen,
+  faCircleNotch,
+  faComment,
   faComments,
   faFeatherAlt,
   faGlasses,
   faHistory,
+  faMusic,
+  faTv,
   faUserFriends,
 } from '@fortawesome/free-solid-svg-icons'
 import { MenuModel, SocialLinkModel } from 'common/store/types'
@@ -50,6 +54,11 @@ const menu: MenuModel[] = [
         icon: faBookOpen,
         path: '/timeline?type=post',
       },
+      {
+        title: '回忆',
+        icon: faCircle,
+        path: '/timeline?memory=1',
+      },
     ],
   },
   {
@@ -57,33 +66,37 @@ const menu: MenuModel[] = [
     icon: faUserFriends,
     path: '/friends',
   },
-  // {
-  //   title: '趣',
-  //   icon: faCircleNotch,
-  //   path: '/favorite/music',
-  //   subMenu: [
-  //     {
-  //       title: '音乐',
-  //       icon: faMusic,
-  //       type: 'Music',
-  //       path: '/favorite/music',
-  //     },
-  //     {
-  //       title: '追番',
-  //       icon: faTv,
-  //       type: 'Bangumi',
-  //       path: '/favorite/bangumi',
-  //     },
-  //     {
-  //       title: '项目',
-  //       icon: faFlask,
-  //       type: 'Project',
-  //       path: '/projects',
-  //     },
-  //   ],
-  // },
+  {
+    title: '诉',
+    icon: faComment,
+    path: '/recently',
+  },
+  {
+    title: '',
+    icon: faCircleNotch,
+    path: '/favorite/music',
+    subMenu: [
+      {
+        title: '音乐',
+        icon: faMusic,
+        type: 'Music',
+        path: '/favorite/music',
+      },
+      {
+        title: '追番',
+        icon: faTv,
+        type: 'Bangumi',
+        path: '/favorite/bangumi',
+      },
+      // {
+      //   title: '项目',
+      //   icon: faFlask,
+      //   type: 'Project',
+      //   path: '/projects',
+      // },
+    ],
+  },
 ]
-// 从这里才需要开始改
 const social: SocialLinkModel[] = [
   {
     url: 'https://github.com/wibus-wee',
@@ -115,8 +128,8 @@ export default {
   homePage: 'https://iucky.cn', // footer link
   menu,
   icp: {
-    name: '#',
-    url: '#',
+    name: 'Coding With TypeScript',
+    url: '/about',
   },
   travellings: true, // 开往
   donate: '#',
